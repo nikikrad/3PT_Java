@@ -1,5 +1,6 @@
 package com.example.govna;
 
+import com.example.govna.exeption.MyException;
 import com.example.govna.repositories.Database;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,11 +32,14 @@ public class AdminStationController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 try {
-                    String stationName = etStation.getText();
-                    database.setStations(stationName);
-                    int priceStation = Integer.parseInt(etPrice.getText().trim());
-                    database.setPrice(priceStation);
-
+                    try {
+                        String stationName = etStation.getText();
+                        database.setStations(stationName);
+                        int priceStation = Integer.parseInt(etPrice.getText().trim());
+                        database.setPrice(priceStation);
+                    }catch (Exception e){
+                        System.out.println();
+                    }
                     btnEdit.getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader();
                     HelloController helloController = new HelloController(database);
