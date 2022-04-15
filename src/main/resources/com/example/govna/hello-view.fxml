@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
+    <children>
+        <AnchorPane layoutX="6.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="389.0" prefWidth="588.0" style="-fx-background-color: #4444;" AnchorPane.topAnchor="6.0">
+            <children>
+                <Label layoutX="244.0" layoutY="14.0" prefHeight="80.0" prefWidth="139.0" text="Кто вы?">
+                    <font>
+                        <Font name="AIGDT" size="37.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnPassenger" layoutX="21.0" layoutY="120.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="256.0" style="-fx-background-color: #9999;" text="Пассажир" textAlignment="CENTER">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Button>
+                <Button fx:id="btnAdministrator" layoutX="313.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #9999;" text="Администратор">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
