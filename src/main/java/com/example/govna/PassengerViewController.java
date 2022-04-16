@@ -3,18 +3,20 @@ package com.example.govna;
 import com.example.govna.repositories.Database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.css.converter.StringConverter;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.converter.NumberStringConverter;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.function.UnaryOperator;
 
 public class PassengerViewController {
 
@@ -24,7 +26,7 @@ public class PassengerViewController {
     private TextField etName;
 
     @FXML
-    private TextField etDate;
+    private DatePicker etDate;
 
     @FXML
     private TextField etTime;
@@ -40,6 +42,10 @@ public class PassengerViewController {
 
     @FXML
     void initialize() {
+
+        etDate.setValue(LocalDate.of(2022, 01, 01));
+
+
         btnEdit.setOnAction(new EventHandler<ActionEvent>(){
 
             @Override
@@ -48,7 +54,8 @@ public class PassengerViewController {
 
                 String name = etName.getText();
                 database.setPersonName(name);
-                String date = etDate.getText();
+
+                String date = String.valueOf(etDate.getValue().toString());
                 database.setDate(date);
                 String time = etTime.getText();
                 database.setTime(time);
@@ -63,6 +70,10 @@ public class PassengerViewController {
 
                 database.setNumber(buf);
 
+//                String var = etDate.getText();
+//                etDate.setTextFormatter(new TextFormatter<Object>(UnaryOperator.identity()));
+//                TextFormatter textFormatter = new TextFormatter(UnaryOperator.identity());
+//                etDate.setTextFormatter(textFormatter);
                 var stage = (Stage) btnEdit.getScene().getWindow();
                 stage.close();
                 FXMLLoader loader = new FXMLLoader();

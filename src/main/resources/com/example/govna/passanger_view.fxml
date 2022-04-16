@@ -14,7 +14,7 @@
             <children>
                 <Label layoutX="244.0" layoutY="6.0" text="Введите ваше имя"/>
                 <TextField fx:id="etName" layoutX="220.0" layoutY="30.0"/>
-                <TextField fx:id="etDate" layoutX="71.0" layoutY="296.0"/>
+                <DatePicker fx:id="etDate" layoutX="71.0" layoutY="296.0"/>
                 <TextField fx:id="etTime" layoutX="372.0" layoutY="296.0"/>
                 <Label layoutX="110.0" layoutY="275.0" text="Введите дату"/>
                 <Label layoutX="406.0" layoutY="275.0" text="Введите время"/>
